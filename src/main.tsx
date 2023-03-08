@@ -1,6 +1,14 @@
+/*
+ * @Author: sfy
+ * @Date: 2023-02-23 19:30:46
+ * @LastEditors: sfy
+ * @LastEditTime: 2023-03-05 16:12:41
+ * @FilePath: /graph-sam/src/main.tsx
+ * @Description: update here
+ */
 import './style/global.less';
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { ConfigProvider } from '@arco-design/web-react';
@@ -16,6 +24,7 @@ import checkLogin from './utils/checkLogin';
 import changeTheme from './utils/changeTheme';
 import useStorage from './utils/useStorage';
 import './mock';
+import 'virtual:windi.css';
 
 const store = createStore(rootReducer);
 
@@ -95,4 +104,4 @@ function Index() {
   );
 }
 
-ReactDOM.render(<Index />, document.getElementById('root'));
+createRoot(document.getElementById('root')).render(<Index />);

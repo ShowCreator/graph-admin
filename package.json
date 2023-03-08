@@ -7,10 +7,7 @@
     "dev": "vite",
     "preview": "vite preview",
     "build": "vite build",
-    "eslint": "eslint src/ --ext .ts,.tsx,.js,.jsx --fix --cache",
-    "stylelint": "stylelint 'src/**/*.less' 'src/**/*.css' --fix --cache",
-    "pre-commit": "pretty-quick --staged && npm run eslint && npm run stylelint",
-    "prepare": "husky install && husky add .husky/pre-commit 'npm run pre-commit'"
+    "eslint": "eslint src/ --ext .ts,.tsx,.js,.jsx --fix --cache"
   },
   "dependencies": {
     "@antv/data-set": "^0.11.8",
@@ -19,23 +16,33 @@
     "@arco-plugins/vite-react": "^1.0.5",
     "@arco-themes/react-arco-pro": "^0.0.7",
     "@loadable/component": "^5.13.2",
+    "@react-three/fiber": "^8.11.7",
     "@turf/turf": "^6.5.0",
+    "@types/dagre-d3": "^0.6.3",
+    "@types/three": "^0.149.0",
     "arco-design-pro": "^2.8.0",
     "axios": "^0.24.0",
     "bizcharts": "^4.1.11",
     "classnames": "^2.3.1",
     "copy-to-clipboard": "^3.3.1",
+    "d3": "^5.16.0",
+    "dagre-d3": "^0.6.4",
+    "gsap": "^3.11.4",
+    "lil-gui": "^0.18.0",
     "lodash": "^4.17.21",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "query-string": "^6.13.8",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-color": "^2.18.1",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-redux": "^7.2.6",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "redux": "^4.1.2"
+    "redux": "^4.1.2",
+    "three": "^0.150.1",
+    "vite-plugin-windicss": "^1.8.10",
+    "windicss": "^3.5.6"
   },
   "devDependencies": {
     "@arco-design/web-react": "^2.0.0",
@@ -53,7 +60,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "husky": "^7.0.2",
     "less": "^4.1.2",
     "less-loader": "7.3.0",
     "postcss-less": "4",
@@ -75,14 +81,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix --cache"
-    ],
-    "*.{css, less}": [
-      "stylelint --fix"
     ]
   },
   "peerDependencies": {

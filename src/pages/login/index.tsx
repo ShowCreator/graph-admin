@@ -1,5 +1,12 @@
+/*
+ * @Author: sfy
+ * @Date: 2023-02-23 19:30:46
+ * @LastEditors: sfy
+ * @LastEditTime: 2023-02-23 19:47:29
+ * @FilePath: /graph-sam/src/pages/login/index.tsx
+ * @Description: update here
+ */
 import React, { useEffect } from 'react';
-import Footer from '@/components/Footer';
 import Logo from '@/assets/logo.svg';
 import LoginForm from './form';
 import LoginBanner from './banner';
@@ -24,9 +31,6 @@ function Login() {
       <div className={styles.content}>
         <div className={styles['content-inner']}>
           <LoginForm />
-        </div>
-        <div className={styles.footer}>
-          <Footer />
         </div>
       </div>
     </div>
