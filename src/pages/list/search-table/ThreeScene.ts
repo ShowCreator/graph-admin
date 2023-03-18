@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-03-08 22:17:59
  * @LastEditors: sfy
- * @LastEditTime: 2023-03-08 23:30:23
+ * @LastEditTime: 2023-03-16 23:40:30
  * @FilePath: /graph-sam/src/pages/list/search-table/ThreeScene.ts
  * @Description: update here
  */
@@ -47,6 +47,10 @@ export class ThreeScene {
     // 添加坐标轴辅助器
     const axesHelper = new THREE.AxesHelper(5);
     this.scene.add(axesHelper);
+
+    // lights
+    const ambientLight = new THREE.AmbientLight( 0xffffff );
+    this.scene.add( ambientLight );
 
     this.controls = new OrbitControls(this.camera, this.canvas);
     this.controls.enableDamping = true;

@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-03-10 16:32:12
  * @LastEditors: sfy
- * @LastEditTime: 2023-03-12 00:03:06
+ * @LastEditTime: 2023-03-16 23:37:22
  * @FilePath: /graph-sam/src/pages/dashboard/workplace/Demo.ts
  * @Description: update here
  */
@@ -11,6 +11,8 @@ import { Point } from 'bizcharts';
 import * as THREE from 'three';
 
 import { ThreeScene } from "./ThreeScene";
+import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
+import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader";
 
 
 export class Demo extends ThreeScene {
@@ -24,6 +26,7 @@ export class Demo extends ThreeScene {
   private cubeGeo: THREE.BoxGeometry
   private cubeMaterial: THREE.MeshLambertMaterial
   private isShiftDown = false
+  private loader
 
   constructor() {
     super()
@@ -47,8 +50,6 @@ export class Demo extends ThreeScene {
   
       this.objects.push( this.plane );
 
-    console.log(this, '-----');
-      
 
       this.canvas.addEventListener( 'pointermove', this.onPointerMove.bind(this), false );
 			this.canvas.addEventListener( 'pointerdown', this.onPointerDown.bind(this), false );
@@ -57,8 +58,6 @@ export class Demo extends ThreeScene {
   }
   onPointerMove( event ) {
 
-    console.log(this);
-    
     this.pointer.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
 
     this.raycaster.setFromCamera( this.pointer, this.camera );
@@ -123,4 +122,5 @@ export class Demo extends ThreeScene {
       case 16: this.isShiftDown = false; break;
     }
   }
+
 }

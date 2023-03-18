@@ -16,7 +16,7 @@ export function Box(props) {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
   // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (mesh.current.rotation.x += delta));
+  // useFrame((state, delta) => (mesh.current.rotation.x += delta));
   // Return view, these are regular three.js elements expressed in JSX
   return (
     <mesh
@@ -27,7 +27,7 @@ export function Box(props) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
-      <boxGeometry args={[1, 1, 1]} />
+      <boxGeometry args={[50, 50, 50]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
   );

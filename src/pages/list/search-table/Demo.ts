@@ -2,22 +2,24 @@
  * @Author: sfy
  * @Date: 2023-03-08 23:27:55
  * @LastEditors: sfy
- * @LastEditTime: 2023-03-09 22:56:57
+ * @LastEditTime: 2023-03-16 23:38:29
  * @FilePath: /graph-sam/src/pages/list/search-table/Demo.ts
  * @Description: update here
  */
 import { Point } from 'bizcharts';
 import * as THREE from 'three';
+import { GLTFLoader } from 'three-stdlib';
 
 import { ThreeScene } from "./ThreeScene";
 
 
 export class Demo extends ThreeScene {
+  private loader
   constructor() {
     super()
-    console.log(this);
-    this.loadGeo()
-    this.loadPoint()
+    // this.loadGeo()
+    // this.loadPoint()
+    this.load()
   }
 
   loadGeo() {
@@ -44,6 +46,8 @@ export class Demo extends ThreeScene {
     
     const line = new THREE.Line( geometry, material );
     this.scene.add( line );
+
+    this.load()
   }
 
   loadPoint() {
@@ -67,6 +71,18 @@ export class Demo extends ThreeScene {
     const points = new THREE.Points( geometry, material );
 
     this.scene.add( points );
+
+  }
+
+  load() {
+    this.loader = new GLTFLoader();
+    this.loader.load("../view.glb", (gltf) => {
+      console.log(gltf, '---');
+      this.scene.add(gltf.scene);
+
+      // 场景子元素遍历
+
+    });
 
   }
 }

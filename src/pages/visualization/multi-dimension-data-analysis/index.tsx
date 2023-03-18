@@ -14,12 +14,11 @@ import { Environment, Lightformer, OrbitControls, PivotControls } from '@react-t
 function DataAnalysis()  {
   return (
     <div className="h-screen ">
-      <Canvas>
-        <gridHelper />
+      <Canvas camera={{ fov: 45, near: 1, far: 10000, position: [500, 800, 1300] }}>
+        <gridHelper args={[1000, 20]}  />
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
+        <Box position={[25, 25, 25]} />
         <OrbitControls  />
       </Canvas>
     </div>
