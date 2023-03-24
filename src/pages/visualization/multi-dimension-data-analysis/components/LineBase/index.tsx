@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-03-19 20:59:14
  * @LastEditors: sfy
- * @LastEditTime: 2023-03-19 22:43:11
+ * @LastEditTime: 2023-03-20 22:25:27
  * @FilePath: /graph-sam/src/pages/visualization/multi-dimension-data-analysis/components/LineBase/index.tsx
  * @Description: update here
  */
@@ -28,14 +28,13 @@ function LineBase({start, end}) {
 
   useFrame((state, delta) => {
     // console.log(ref, 'ref');
-    texture.offset.x -= 0.01
+    texture.offset.x -= 0.001
   })
 
   return (
     <mesh  ref={ref} >
       <tubeGeometry args={[curve, 80, 2]}></tubeGeometry>
       <meshBasicMaterial  
-      color="#ffffff" 
       map={texture}
       transparent={true}
       side={THREE.BackSide}
